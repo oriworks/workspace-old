@@ -1,0 +1,35 @@
+{
+  "name": "design-system-core",
+  "sourceRoot": "libs/design-system/core/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/design-system/core/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/design-system/core",
+        "tsConfig": "libs/design-system/core/tsconfig.lib.json",
+        "project": "libs/design-system/core/package.json",
+        "entryFile": "libs/design-system/core/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/design-system/core/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

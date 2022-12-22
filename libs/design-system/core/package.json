@@ -1,6 +1,6 @@
 {
   "name": "@oriworks/ds-core",
-  "version": "0.0.1",
+  "version": "0.0.0-semantic-release",
   "main": "./index.js",
   "module": "./index.mjs",
   "exports": {
@@ -8,5 +8,10 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oriworks/workspace.git",
+    "directory": "libs/design-system/core"
   }
 }

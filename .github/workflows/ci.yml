@@ -11,6 +11,10 @@ on:
       - synchronize
       - closed
 
+env:
+  HUSKY: 0
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -21,9 +25,6 @@ jobs:
         npm-version: [8]
         yarn-version: ['1.22.x']
         pnpm-version: [7]
-
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
       - name: Checkout [Pull Request]
